@@ -15,27 +15,27 @@ import {
 const items = [
   {
     title: "Home",
-    url: "#",
+    url: "/",
     icon: Home,
   },
   {
     title: "For You",
-    url: "#",
+    url: "/for-you",
     icon: Inbox,
   },
   {
     title: "Top charts",
-    url: "#",
+    url: "/top-charts",
     icon: TrendingUp,
   },
   {
     title: "Admin",
-    url: "#",
+    url: "/admin",
     icon: ShieldEllipsis,
   },
   {
     title: "Settings",
-    url: "#",
+    url: "/settings",
     icon: Settings,
   },
 ];
@@ -50,10 +50,10 @@ const items = [
           <SidebarMenu>
               <SidebarMenuItem v-for="item in items" :key="item.title">
                 <SidebarMenuButton asChild>
-                    <a :href="item.url">
+                    <RouterLink :to="item.url">
                       <component :is="item.icon" />
                       <span>{{item.title}}</span>
-                    </a>
+                    </RouterLink>
                 </SidebarMenuButton>
               </SidebarMenuItem>
           </SidebarMenu>
