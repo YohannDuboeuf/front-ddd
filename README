@@ -1,0 +1,10 @@
+front-ddd
+=========
+
+Front-end for the DDD music & fashion project.
+
+Project setup :
+    (Installation): $ yarn install
+    (dev. server ): $ yarn serve
+    (proj. build ): $ yarn build
+    (lint & fix  ): $ yarn lint
