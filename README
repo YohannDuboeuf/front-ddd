@@ -1,0 +1,21 @@
+FRONT-END DDD
+=============
+
+This repo hosts the source code responsible for the front-end of the DDD project,
+matching music charts with fashion.
+
+
+Running the project
+===================
+
+$ npm install
+$ npm run dev
+
+
+Useful documentation
+====================
+
+- shadcn-vue : https://www.shadcn-vue.com/
+- vuetify : https://vuetifyjs.com/en/
+- lucide : https://lucide.dev/icons/
+- tailwind : https://tailwindcss.com/
