@@ -19,11 +19,11 @@ const items = [
     url: "/",
     icon: Home,
   },
-  {
-    title: "For You",
-    url: "/for-you",
-    icon: Inbox,
-  },
+  // {
+  //   title: "For You",
+  //   url: "/for-you",
+  //   icon: Inbox,
+  // },
   {
     title: "Top charts",
     url: "/top-charts",
