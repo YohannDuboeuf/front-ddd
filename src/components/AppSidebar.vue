@@ -10,6 +10,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
+import { computed, ref } from "vue";
 
 // Menu items.
 const items = [
@@ -44,6 +45,16 @@ const items = [
     icon: Settings,
   },
 ];
+
+let loggedIn = ref(false)
+
+if ( localStorage.getItem('username') )
+{
+  loggedIn.value = true
+}
+
+const username = computed(() => {return localStorage.getItem('username')})
+
 </script>
 
 <template>
@@ -51,6 +62,7 @@ const items = [
     <SidebarContent>
       <SidebarGroup>
         <SidebarGroupLabel>Navigation</SidebarGroupLabel>
+        <SidebarGroupLabel v-if="loggedIn">LOGGED-IN AS [{{ username || 'unknown' }}]</SidebarGroupLabel>
         <SidebarGroupContent>
           <SidebarMenu>
               <SidebarMenuItem v-for="item in items" :key="item.title">
