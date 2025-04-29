@@ -69,11 +69,17 @@ onMounted(async () => {
         }))
 
         response = await response.json()
-        response = response.filter(v => {return v.month === `${date.split('-')[0]}-${date.split('-')[1]}`})[0].top_categories
+
+        const res_bak = structuredClone(response)
+        try {
+            response = response.filter(v => {return v.month === `${date.split('-')[0]}-${date.split('-')[1]}`})[0].top_categories
+        } catch (_) {
+            response = ['N/A']
+        }
+
         console.log(response)
         salesdata.value = response
     }
-
 
     isLoading.value = false
 })
