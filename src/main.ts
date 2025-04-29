@@ -9,12 +9,14 @@ import TopCharts from './components/TopCharts.vue'
 import Settings from './components/Settings.vue'
 import Home from './components/Home.vue'
 import Admin from './components/Admin.vue'
+import TopChartsByCountry from './components/TopChartsByCountry.vue'
 
 const routes = [
     { path: '/', component: Home },
     { path: '/for-you', component: ForYou },
     { path: '/settings', component: Settings },
     { path: '/top-charts', component: TopCharts },
+    { path: '/top-charts/:sc', component: TopChartsByCountry },
     { path: '/admin', component: Admin },
   ]
 
