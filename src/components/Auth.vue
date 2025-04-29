@@ -55,29 +55,33 @@
       };
     },
     methods: {
-      async handleSubmit() {
-        this.error = '';
-        try {
-          const response = await fetch(`http://localhost:8000/users/${this.mode}`, {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(this.form)
-          });
+        async handleSubmit() {
+            this.error = '';
+            try {
+                const formData = new FormData();
+                formData.append('username', this.form.username);
+                formData.append('password', this.form.password);
 
-          if (!response.ok) {
-            const data = await response.json();
-            this.error = data.message || 'Something went wrong.';
-          } else {
-            alert(`${this.mode.charAt(0).toUpperCase() + this.mode.slice(1)} successful!`);
-            this.form.username = '';
-            this.form.password = '';
-          }
-        } catch (err) {
-          this.error = 'Failed to connect to the server.';
+                const response = await fetch(`http://localhost:8000/users/${this.mode}/`, {
+                method: 'POST',
+                body: formData
+                });
+
+                const data = await response.json();
+
+                if (!response.ok) {
+                    this.error = data.message || 'Something went wrong.';
+                } else {
+
+                    alert(`${this.mode.charAt(0).toUpperCase() + this.mode.slice(1)} successful!`);
+                    localStorage.setItem('username', this.form.username)
+                    localStorage.setItem('token', data.access)
+                    window.location.reload()
+                }
+            } catch (err) {
+                this.error = 'Failed to connect to the server.';
+            }
         }
-      }
     }
   };
 </script>
