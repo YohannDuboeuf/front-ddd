@@ -38,6 +38,11 @@ const items = [
     url: "/settings",
     icon: Settings,
   },
+  {
+    title: "Auth",
+    url: "/auth",
+    icon: Settings,
+  },
 ];
 </script>
 

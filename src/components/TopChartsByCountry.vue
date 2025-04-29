@@ -17,6 +17,7 @@
     </div>
 </template>
 <script setup>
+
 import CustomConsts from './consts.ts'
 import { LoaderCircle } from 'lucide-vue-next'
 import { onMounted, ref } from 'vue'
@@ -31,6 +32,5 @@ onMounted(async () => {
   country = { sc: 'FR', name: 'France' }
   isLoading.value = false
 })
-
 
 </script>
